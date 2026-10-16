@@ -1,0 +1,156 @@
+/* =========================================================
+   1. GLOBAL STYLES & BACKGROUND
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e6edf3;
+    min-height: 100vh;
+    line-height: 1.6;
+
+    /* Layer 1: Degradasi hitam transparan (menjaga keterbacaan teks)
+       Layer 2: Glow/Pendaran warna hijau emerald di sisi kanan
+       Layer 3: Foto dari tautan ImgBB Anda */
+    background: 
+        linear-gradient(to right, rgba(13, 17, 23, 0.95) 0%, rgba(13, 17, 23, 0.8) 60%, rgba(13, 17, 23, 0.5) 100%),
+        radial-gradient(circle at 85% 30%, rgba(46, 204, 113, 0.2) 0%, transparent 50%),
+        url('https://i.ibb.co.com/kVVmV8YV/FOTO-TEMU-ANAK-INDONESIA-38.jpg') no-repeat center center / cover;
+
+    background-attachment: fixed; /* Background diam saat di-scroll */
+}
+
+/* Container Utama */
+.container, main.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* =========================================================
+   2. TYPOGRAPHY & HEADINGS
+   ========================================================= */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Warna hijau neon/emerald untuk judul section dan ikon */
+h2, h2 i {
+    color: #2ecc71;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #f0f6fc;
+}
+
+p {
+    color: #8b949e;
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   3. GLASSMORPHISM CARDS (KARTU KONTEN)
+   ========================================================= */
+.card, section.card {
+    background: rgba(22, 27, 34, 0.8); /* Warna gelap transparan */
+    backdrop-filter: blur(12px);         /* Efek kaca buram */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efek menyala saat kursor diarahkan ke kartu */
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(46, 204, 113, 0.4);
+}
+
+/* =========================================================
+   4. TAGS (SKILLS, PROJECT BOX, & BADGES)
+   ========================================================= */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tags span, .proj-box {
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    color: #2ecc71;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.tags span:hover {
+    background: rgba(46, 204, 113, 0.25);
+}
+
+.proj-box {
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* =========================================================
+   5. FOTO PROFIL & DOKUMENTASI
+   ========================================================= */
+/* Gaya untuk foto profil berbentuk lingkaran */
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2ecc71;
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+    margin-bottom: 15px;
+}
+
+/* Gaya untuk foto galeri/dokumentasi di dalam kartu */
+.exp-img, .project-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 12px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   6. RESPONSIVE DESIGN (TAMPILAN HP)
+   ========================================================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 12px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    body {
+        /* Filter lebih pekat di HP agar teks tetap terbaca jelas */
+        background: 
+            linear-gradient(rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.9)),
+            url('https://i.ibb.co.com/kVVmV8YV/FOTO-TEMU-ANAK-INDONESIA-38.jpg') no-repeat center center / cover;
+    }
+}
